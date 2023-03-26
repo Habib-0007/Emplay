@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "ABeeZee", sans-serif;
+}
+
+body {
+    background:  #ff0090;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 1em;
+}
+
+header h1 {
+    padding-left: 0.3em;
+}
+
+header .fa-play {
+    font-size: 1.4em;
+}
+
+section.container {
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 40em;
+    border-radius: 1em;
+    margin: 1em auto;
+}
+
+section.container div.image img {
+    animation-play-state: paused;
+}
+
+section.container.play div.image img  {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+div.image {
+    width:  5em;
+    position: relative;
+}
+
+div.image::after {
+    content: " ";
+    width: 1.2em;
+    height: 1.2em;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.image img {
+    width: inherit;
+    height: 5em;
+    border-radius: 50%;
+    animation: rotate 3s linear infinite;
+}
+
+div.songname {
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+p.title {
+    text-transform: uppercase;
+}
+
+div#author {
+    font-weight: 600;
+    font-size: 1.18em;
+    color: #ff0090;
+}
+
+div.progress-container {
+    width: calc(100% - 4em);
+    height: 0.4em;
+    background: #ccc;
+    margin-top: 2em;
+    border-radius: 0.3em;
+}
+
+div.progress-container .progress {
+    width: 0%;
+    height: inherit;
+    border-radius: inherit;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.buttons button {
+    background: #fff;
+    color: #000;
+    font-size: 1.5em;
+    padding: 0.7em;
+}
+
+div.buttons button #play {
+    font-size: 1.8em;
+}
+
+footer {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+footer > li {
+    list-style: none;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s linear ;
+}
+
+footer > li:hover {
+    width: 50px;
+    height: 50px;
+ }
+
+footer li > a {
+    color: #000;
+    font-size: 25px;
+    cursor: none;
+}
+
+@media screen and (min-width: 767px) {
+    section.container {
+        width: 40em;
+    }
+}
